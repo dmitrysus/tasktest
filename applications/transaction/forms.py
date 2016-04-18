@@ -14,7 +14,6 @@ class TransactionForm(forms.Form):
         data = self.cleaned_data['summ']
         if self.cleaned_data.get('users'):
             if data > self.cleaned_data.get('users').account:
-                print 'shit'
                 raise forms.ValidationError("На счету пользователя недостаточно средств")
         return data
 
